@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.log
+.env
+venv/
+.venv/
+env/
+ENV/
+
+# Node
+node_modules/
+dist/
+.parcel-cache/
+.cache/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+
+# Frontend build
+frontend/dist/
+frontend/.env
+
+# Backend env
+backend/.env
+
+# Docker
+.dockerignore
+
+# Coverage
+htmlcov/
+.coverage
+.pytest_cache/

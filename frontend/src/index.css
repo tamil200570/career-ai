@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-800;
+  }
+
+  body {
+    @apply bg-gray-950 text-gray-100 font-sans;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-1.5;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-brand-600 rounded-full;
+  }
+
+  ::selection {
+    @apply bg-brand-600 text-white;
+  }
+}
+
+@layer components {
+  /* Glass morphism card */
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
+  }
+
+  /* Primary gradient button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-gradient-to-r from-brand-600 to-accent-600
+           text-white font-semibold rounded-xl
+           hover:from-brand-500 hover:to-accent-500
+           active:scale-95
+           transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100
+           shadow-lg shadow-brand-600/25;
+  }
+
+  /* Secondary ghost button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3
+           bg-white/10 border border-white/20
+           text-white font-semibold rounded-xl
+           hover:bg-white/20
+           active:scale-95
+           transition-all duration-200
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  /* Danger button */
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 px-4 py-2
+           bg-red-600/20 border border-red-500/30
+           text-red-400 font-medium rounded-lg
+           hover:bg-red-600/30
+           active:scale-95
+           transition-all duration-200;
+  }
+
+  /* Form input */
+  .input {
+    @apply w-full px-4 py-3
+           bg-white/5 border border-white/10
+           text-white placeholder-gray-500
+           rounded-xl outline-none
+           focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20
+           transition-all duration-200;
+  }
+
+  /* Form label */
+  .label {
+    @apply block text-sm font-medium text-gray-300 mb-1.5;
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-brand-400 to-accent-400 bg-clip-text text-transparent;
+  }
+
+  /* Glow effect */
+  .glow {
+    @apply shadow-xl shadow-brand-600/20;
+  }
+
+  /* Tag/chip */
+  .chip {
+    @apply inline-flex items-center gap-1 px-3 py-1
+           bg-brand-600/20 border border-brand-500/30
+           text-brand-300 text-sm font-medium rounded-full;
+  }
+
+  /* Section card */
+  .card {
+    @apply glass p-6 animate-fade-in;
+  }
+
+  /* Navigation link active */
+  .nav-link {
+    @apply px-4 py-2 rounded-xl text-sm font-medium
+           text-gray-300 hover:text-white hover:bg-white/10
+           transition-all duration-200;
+  }
+
+  .nav-link.active {
+    @apply text-white bg-brand-600/30 border border-brand-500/30;
+  }
+}
+
+/* Gradient orb backgrounds */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  pointer-events: none;
+}
+
+/* Animated gradient border */
+@keyframes borderGlow {
+  0%, 100% { border-color: rgba(99, 102, 241, 0.3); }
+  50%       { border-color: rgba(139, 92, 246, 0.6); }
+}
+
+.border-glow {
+  animation: borderGlow 3s ease-in-out infinite;
+}
+
+/* Progress bar animation */
+@keyframes progressFill {
+  from { width: 0%; }
+  to   { width: var(--progress); }
+}
+
+.progress-fill {
+  animation: progressFill 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
